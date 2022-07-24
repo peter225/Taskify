@@ -1,0 +1,9 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label class="label">Tasks</mat-label>
+      <input matInput placeholder="e.g wash plates" [(ngModel)]="taskName" [ngModelOptions]="{standalone: true}">
+      
+    </mat-form-field>
+    <button mat-raised-button color="primary"(click)="createTask(taskName)">Add</button>
+    
+</form>

@@ -1,0 +1,14 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor='let task of tasks'>
+      <mat-expansion-panel-header>
+        <span><mat-icon *ngIf='task.completed' color="primary">done</mat-icon></span>{{task.name}}
+      </mat-expansion-panel-header>
+      
+      
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/edit', task.id]"><mat-icon>edit</mat-icon></a>
+        <button mat-button color="warn" ><mat-icon>delete</mat-icon></button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <router-outlet></router-outlet>
+  </mat-accordion>

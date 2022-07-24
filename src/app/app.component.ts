@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { TaskService } from './task.service';
+import { Task } from './task.model';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sportsStore';
+
+  taskCreated()
+  {
+    this
+  }
 }
