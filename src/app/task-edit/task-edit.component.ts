@@ -33,20 +33,32 @@ export class TaskEditComponent implements OnInit {
       if (paramMap.has('taskId')) {
         this.taskId = paramMap.get('taskId');
         this.taskService.onFetchTask(this.taskId).subscribe(taskData => {
+          console.log(taskData)
           this.task = {
-            id: taskData.id,
-            name: taskData.name,
-            completed: taskData.completed
+            _id: taskData.task._id,
+            name: taskData.task.name,
+            completed: taskData.task.completed
           };
+          
           this.form.setValue({
             name: this.task.name,
-            completd: this.task.completed
+            completed: this.task.completed
             
           });
+          //console.log(this.form)
         });
+      }
+      else{
+        console.log("not fetched")
       } 
     });
 
+  }
+
+  editTask()
+  {
+    //console.log('a')
+    this.taskService.onEditTask(this.task._id,this.form.value.name, this.form.value.completed)
   }
 
 }

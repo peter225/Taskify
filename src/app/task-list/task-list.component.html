@@ -6,9 +6,9 @@
       
       
       <mat-action-row>
-        <a mat-button color="primary" [routerLink]="['/edit', task.id]"><mat-icon>edit</mat-icon></a>
-        <button mat-button color="warn" ><mat-icon>delete</mat-icon></button>
+        <a mat-button color="primary" [routerLink]="['/edit', task._id]"><mat-icon>edit</mat-icon></a>
+        <button mat-button color="warn" (click)="deleteTask(task._id)"><mat-icon>delete</mat-icon></button>
       </mat-action-row>
     </mat-expansion-panel>
-    <router-outlet></router-outlet>
+   
   </mat-accordion>

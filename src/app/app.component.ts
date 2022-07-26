@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TaskService } from './task.service';
 import { Task } from './task.model';
+import { TaskEditComponent } from './task-edit/task-edit.component';
+import { Router } from '@angular/router';
+//TaskEditComponent
+//Router
 
 
 @Component({
@@ -10,9 +14,10 @@ import { Task } from './task.model';
 })
 export class AppComponent {
   title = 'sportsStore';
+  constructor(private router: Router){}
+  @ViewChild(TaskEditComponent)child: TaskEditComponent;
 
-  taskCreated()
-  {
-    this
+  hasRoute(route: string) {
+    return this.router.url.includes(route);
   }
 }

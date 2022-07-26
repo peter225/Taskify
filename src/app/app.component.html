@@ -1,8 +1,17 @@
 <app-header></app-header>
 
-<app-task-create></app-task-create>
+<div *ngIf="!hasRoute('edit')">
+    <app-task-create></app-task-create>
 
-<main>
-    <app-task-list ></app-task-list>
-</main>
+    <main>
+        <app-task-list ></app-task-list>
+    
+    </main>
+
+</div>
+<div *ngIf="hasRoute('edit')">
+    <router-outlet></router-outlet>
+</div>
+
+
 

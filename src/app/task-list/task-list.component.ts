@@ -4,6 +4,8 @@ import { map } from "rxjs/operators";
 import { TaskService } from '../task.service';
 import { Task } from '../task.model';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-task-list',
@@ -18,7 +20,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
   
   
   //task = "";
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.fetchTasks();
@@ -40,6 +42,10 @@ export class TaskListComponent implements OnInit, OnDestroy {
     });
     
   }
+  deleteTask(id: string){
+    this.taskService.onDeleteTask(id).subscribe(()=> this.fetchTasks())
+  }
+  
   ngOnDestroy(): any {
     this.taskChanged.unsubscribe();
   }

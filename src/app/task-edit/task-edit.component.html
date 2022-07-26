@@ -1,10 +1,12 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="form" (ngSubmit)="editTask()">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label class="label"></mat-label>
-      <input matInput type="text">
-      <mat-checkbox class="example-margin">Completed</mat-checkbox>
+      <input matInput type="text" formControlName="name" >
+      
       
     </mat-form-field>
-    <button mat-raised-button color="primary">Edit</button>
-    
+    <mat-checkbox class="example-margin" formControlName="completed">Completed</mat-checkbox>
+    <div class="edit">
+      <button mat-raised-button color="primary" >Edit</button>
+    </div>
 </form>
