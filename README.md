@@ -1,4 +1,5 @@
-# SportsStore
+# Taskify
+This is a task management application built with angular on the frontend and nodejs with express on the backend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
